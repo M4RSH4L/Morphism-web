@@ -7,14 +7,34 @@ body {
 	line-height: 24px;
 	overscroll-behavior: none;
 }
+.container{
+	position: absolute;
+	height: 100vh;
+	width:200vh;
+	display:grid ;
+	place-items:center ;
+}
+#container{
+	
+	position:absolute;
+	top: 0;
+	outline: none;
+}
+h1{display:flex;
+	align-items: center;
+	font-size: 9rem;
+	text-transform: uppercase;
+	color:rgba(153, 0, 209, 0.341);
+	
+}
 
 a {
-	color: #ff0;
+	color: rgb(255, 255, 255);
 	text-decoration: none;
 }
 
 a:hover {
-	text-decoration: underline;
+	text-decoration:blueviolet;
 }
 
 button {
@@ -23,6 +43,7 @@ button {
 }
 
 #info {
+	border-radius: 25px;
 	position: absolute;
 	top: 0px;
 	width: 100%;
@@ -85,7 +106,12 @@ a, button, input, select {
 #notSupported {
 	width: 50%;
 	margin: auto;
-	background-color: #f00;
+	background-color: rgb(32, 1, 1);
 	margin-top: 20px;
 	padding: 10px;
 }
+
+
+
+/*header*/
+

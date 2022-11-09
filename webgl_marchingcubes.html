@@ -1,20 +1,23 @@
-<!DOCTYPE html>
+z<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>three.js webgl - marching cubes</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="main.css">
+	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
 </head>
 
 <body>
 
-	<div id="container"></div>
+	
+	<div id="container"><h1></h1></div>
+	<div class="container"><h1>Chroma</h1></div>
 	
 
 	<!-- Import maps polyfill -->
 	<!-- Remove this when import maps will be widely supported -->
-	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
 
 	<script type="importmap">
 		{
@@ -60,35 +63,36 @@
 
 			// CAMERA
 
-			camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
+			camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 1, 10000 );
 			camera.position.set( - 500, 500, 1500 );
 
 			// SCENE
 
 			scene = new THREE.Scene();
-			scene.background = new THREE.Color( 0x050505 );
+			scene.background = new THREE.Color( 0x000000 );
 
 			// LIGHTS
 
-			light = new THREE.DirectionalLight( 0xffffff );
-			light.position.set( 0.5, 0.5, 1 );
+			light = new THREE.DirectionalLight( 0xFF00F7);//(trasera)
+			light.position.set( 50, 0, -0 );
 			scene.add( light );
 
-			pointLight = new THREE.PointLight( 0xff3300 );
-			pointLight.position.set( 0, 0, 100 );
+			pointLight = new THREE.PointLight( 0x00EFFF );//(centro)
+			pointLight.position.set( -50, 0, 100 );
 			scene.add( pointLight );
 
-			ambientLight = new THREE.AmbientLight( 0x080808 );
+			ambientLight = new THREE.AmbientLight( 0x0900FF );//(frente)
+			ambientLight.position.set(50,0,4)
 			scene.add( ambientLight );
 
 			// MATERIALS
 
 			materials = generateMaterials();
-			current_material = 'shiny';
+			current_material = 'plastic';
 
 			// MARCHING CUBES
 
-			resolution = 28;
+			resolution = 30;
 
 			effect = new MarchingCubes( resolution, materials[ current_material ], true, true, 100000 );
 			effect.position.set( 0, 0, 0 );
@@ -164,24 +168,24 @@
 			const hatchingMaterial = createShaderMaterial( ToonShaderHatching, light, ambientLight );
 			const dottedMaterial = createShaderMaterial( ToonShaderDotted, light, ambientLight );
 
-			const texture = new THREE.TextureLoader().load( 'textures/blackandgreen.jpg' );
+			const texture = new THREE.TextureLoader().load( 'images/abstractgreen.jpg' );
 			texture.wrapS = THREE.RepeatWrapping;
 			texture.wrapT = THREE.RepeatWrapping;
 
 			const materials = {
-				'shiny': new THREE.MeshStandardMaterial( { color: 0x550000, envMap: reflectionCube, roughness: 0.1, metalness: 1.0 } ),
-				'chrome': new THREE.MeshLambertMaterial( { color: 0xffffff, envMap: reflectionCube } ),
-				'liquid': new THREE.MeshLambertMaterial( { color: 0xffffff, envMap: refractionCube, refractionRatio: 0.85 } ),
-				'matte': new THREE.MeshPhongMaterial( { specular: 0x111111, shininess: 1 } ),
-				'flat': new THREE.MeshLambertMaterial( { /*TODO flatShading: true */ } ),
-				'textured': new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 1, map: texture } ),
-				'colors': new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0xffffff, shininess: 2, vertexColors: true } ),
-				'multiColors': new THREE.MeshPhongMaterial( { shininess: 2, vertexColors: true } ),
-				'plastic': new THREE.MeshPhongMaterial( { specular: 0x888888, shininess: 250 } ),
-				'toon1': toonMaterial1,
-				'toon2': toonMaterial2,
-				'hatching': hatchingMaterial,
-				'dotted': dottedMaterial
+				 'shiny': new THREE.MeshStandardMaterial( { color: 0xffffff, envMap: reflectionCube, roughness: 0.1, metalness: 1.0 } ),
+				 'chrome': new THREE.MeshLambertMaterial( { color: 0xffffff, envMap: reflectionCube } ),
+				 'liquid': new THREE.MeshLambertMaterial( { color: 0xffffff, envMap: refractionCube, refractionRatio: 0.85 } ),
+				 'matte': new THREE.MeshPhongMaterial( { specular: 0x111111, shininess: 1 } ),
+				 'flat': new THREE.MeshLambertMaterial( { /*TODO flatShading: true */ } ),
+				 'textured': new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 1, map: texture } ),
+				 'colors': new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0xffffff, shininess: 2, vertexColors: true } ),
+				 'multiColors': new THREE.MeshPhongMaterial( { shininess: 2, vertexColors: true } ),
+				 'plastic': new THREE.MeshPhongMaterial( { specular: 0xffffff, shininess: 250 } ),
+				 'toon1': toonMaterial1,
+				 'toon2': toonMaterial2,
+				 'hatching': hatchingMaterial,
+				 'dotted': dottedMaterial
 			};
 
 			return materials;
@@ -226,12 +230,11 @@
 
 			effectController = {
 
-				material: 'shiny',
-
-				speed: 1.0,
+				material: 'plastic',
+				speed: 0.6,
 				numBlobs: 10,
-				resolution: 28,
-				isolation: 80,
+				resolution: 65,
+				isolation: 56,
 
 				floor: true,
 				wallx: false,
@@ -359,5 +362,53 @@
 
 </script>
 
+
+<!-- <section id="three" class="wrapper style3 special">
+	<div class="inner">
+		
+	
+		
+		<ul class="features">
+		
+			
+		<header class="major">
+			<h2>Accumsan mus tortor nunc aliquet</h2>
+			<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+			fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+		</header>
+			
+			<li class="icon solid fa-headphones-alt">
+				<h3>Mauris Imperdiet</h3>
+				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+			</li>
+	
+			<li class="icon solid fa-headphones-alt">
+				<h3>Mauris Imperdiet</h3>
+				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+			</li>
+	
+			<li class="icon solid fa-headphones-alt">
+				<h3>Mauris Imperdiet</h3>
+				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+			</li>
+			
+			
+			<li class="icon solid fa-headphones-alt">
+				<h3>Mauris Imperdiet</h3>
+				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+			</li>
+			<li class="icon fa-heart">
+				<h3>Aenean Primis</h3>
+				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+			</li>
+			<li class="icon fa-flag">
+				<h3>Tortor Ut</h3>
+				<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+			</li>
+		</ul>
+	</div>
+	
+</div>
+</section>  -->
 </body>
 </html>

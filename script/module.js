@@ -1,11 +1,11 @@
 import * as THREE from 'three';
 
-		import Stats from '../stats.module.js';
+		import Stats from './stats.module.js';
 
 		import { GUI } from './lil-gui.module.min.js';
 		import { OrbitControls } from './OrbitControls.js';
 		import { MarchingCubes } from './MarchingCubes.js';
-		import { ToonShader1, ToonShader2, ToonShaderHatching, ToonShaderDotted } from '../ToonShader.js';
+		import { ToonShader1, ToonShader2, ToonShaderHatching, ToonShaderDotted } from './ToonShader.js';
 
 		let container, stats;
 

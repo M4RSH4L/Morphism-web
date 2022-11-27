@@ -14,7 +14,7 @@ let camera, scene, renderer;
 
 let materials, current_material;
 
-let light, pointLight, ambientLight;
+let light, pointLight, spotLight, ambientLight;
 
 let effect, resolution;
 
@@ -39,11 +39,11 @@ function init() {
 	// SCENE
 
 	scene = new THREE.Scene();
-	scene.background = new THREE.Color( 0x000000 );
+	scene.background = new THREE.Color( 0x010000 );
 
 	// LIGHTS
 
-	light = new THREE.DirectionalLight( 0xfd9eff);//(trasera)
+	light = new THREE.DirectionalLight( 0xff9eff);//(trasera)
 	light.position.set( 50, 0, -0 );
 	scene.add( light );
 
@@ -51,14 +51,16 @@ function init() {
 	pointLight.position.set( -50, 0, 100 );
 	scene.add( pointLight );
 
-	ambientLight = new THREE.AmbientLight( 0x0900FF );//(frente)
+	ambientLight = new THREE.AmbientLight( 0xffffff );//(frente)
 	ambientLight.position.set(50,0,4)
 	scene.add( ambientLight );
+
+
 
 	// MATERIALS
 
 	materials = generateMaterials();
-	current_material = 'flat';
+	current_material = 'textured';
 
 	// MARCHING CUBES
 
@@ -118,7 +120,7 @@ function generateMaterials() {
 	// environment map
 
 	const path = './SwedishRoyalCastle/';
-	const format = '.jpg';
+	const format = '.png';
 	const urls = [
 		path + 'px' + format, path + 'nx' + format,
 		path + 'py' + format, path + 'ny' + format,
@@ -138,17 +140,17 @@ function generateMaterials() {
 	const hatchingMaterial = createShaderMaterial( ToonShaderHatching, light, ambientLight );
 	const dottedMaterial = createShaderMaterial( ToonShaderDotted, light, ambientLight );
 
-	const texture = new THREE.TextureLoader().load( 'images/vangogh2.png' );
+	const texture = new THREE.TextureLoader().load( '../images/creacion.png' );
 	texture.wrapS = THREE.RepeatWrapping;
 	texture.wrapT = THREE.RepeatWrapping;
 
 	const materials = {
-		 'shiny': new THREE.MeshStandardMaterial( { color: 0xffffff, envMap: reflectionCube, roughness: 0.1, metalness: 1.0 } ),
+		 'shiny': new THREE.MeshStandardMaterial( { color: 0xffffff, envMap: reflectionCube,  roughness: 0.1, metalness: 1.0 } ),
 		 'chrome': new THREE.MeshLambertMaterial( { color: 0xffffff, envMap: reflectionCube } ),
 		 'liquid': new THREE.MeshLambertMaterial( { color: 0xffffff, envMap: refractionCube, refractionRatio: 0.85 } ),
 		 'matte': new THREE.MeshPhongMaterial( { specular: 0x111111, shininess: 1 } ),
 		 'flat': new THREE.MeshLambertMaterial( { /*TODO flatShading: true */ } ),
-		 'textured': new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 1, map: texture } ),
+		 'textured': new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 1,vertexColors:true, map: texture } ),
 		 'colors': new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0xffffff, shininess: 2, vertexColors: true } ),
 		 'multiColors': new THREE.MeshPhongMaterial( { shininess: 2, vertexColors: true } ),
 		 'plastic': new THREE.MeshPhongMaterial( { specular: 0xffffff, shininess: 250 } ),
@@ -253,7 +255,7 @@ function updateCubes( object, time, numblobs, floor, wallx, wallz ) {
 	// fill the field with some metaballs
 
 	const rainbow = [
-		new THREE.Color( 0xff0000 ),
+		new THREE.Color( 0x000000 ),
 		new THREE.Color( 0xff7f00 ),
 		new THREE.Color( 0xffff00 ),
 		new THREE.Color( 0x00ff00 ),

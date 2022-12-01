@@ -39,19 +39,22 @@ function init() {
 	// SCENE
 
 	scene = new THREE.Scene();
-	scene.background = new THREE.Color( 0x010000 );
+	scene.background = new THREE.Color( 0x996cc9);
 
 	// LIGHTS
 
 	light = new THREE.DirectionalLight( 0xff9eff);//(trasera)
-	light.position.set( 50, 0, -0 );
+	light.position.set( 50, 0, 100 );
 	scene.add( light );
 
 	pointLight = new THREE.PointLight( 0x33EFFF );//(centro)
 	pointLight.position.set( -50, 0, 100 );
 	scene.add( pointLight );
 
-	ambientLight = new THREE.AmbientLight( 0xffffff );//(frente)
+
+
+
+	ambientLight = new THREE.AmbientLight( 0x003ff);//(frente)
 	ambientLight.position.set(50,0,4)
 	scene.add( ambientLight );
 
@@ -60,7 +63,7 @@ function init() {
 	// MATERIALS
 
 	materials = generateMaterials();
-	current_material = 'textured';
+	current_material = 'multiColors';
 
 	// MARCHING CUBES
 
@@ -202,13 +205,13 @@ function setupGui() {
 
 	effectController = {
 
-		material: 'plastic',
-		speed: 0.6,
-		numBlobs: 10,
+		material: 'colors',
+		speed: 0.4,
+		numBlobs: 25,
 		resolution: 65,
 		isolation: 56,
 
-		floor: true,
+		floor: false,
 		wallx: false,
 		wallz: false,
 

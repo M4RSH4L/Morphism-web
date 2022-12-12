@@ -8,6 +8,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300&display=swap" rel="stylesheet">
 	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
 	<script async type="module" src="./script/object.js"></script>
+	<script  type="module" src="./script/login.js"></script>
+	<script async type="module" src="./login.html"></script>
 
 	<script type="importmap">
 		{"imports": {"three": "../build/three.module.js","three/addons/": "./jsm/"}}
@@ -44,7 +46,8 @@
 	  
 	
 		<!-- init background 3d -->
-	<div class="title"><div class="title-hijo"><h1>Chroma</h1></div></div>
+	<div class="title"><div class="title-hijo"><h1 id="miTitulo"></h1></div></div>
+	<div id="showName"></div>
 	<div id="container"></div>
        <!-- end background 3d -->
 
@@ -72,6 +75,39 @@
 		</div>
 		</section>
 
+		<section class="about-my">
+		
+			<div class="about-mycontent-2">
+				<div class="up-title">
+					<h2>esta pagina fue echa con </h2>
+				</div>
+			<div class="content-by">	
+				
+				<div class="marg-img">
+				<img src="./assets/images/threej.png" alt="image" class="img-fluid">
+				<p>Three.js</p>
+			</div>
+				<div class="marg-img">
+				<img src="./assets/images/jas.png" alt="image" class="img-fluid">
+				<p>JavaScript</p>
+			</div>
+			<div class="marg-img">
+				<img src="./assets/images/stability.png" alt="image" class="img-fluid">
+				<p>Stable Diffusion IA</p>
+			</div>
+			<div class="marg-img">
+				<img src="./assets/images/html.png" alt="image" class="img-fluid">
+				<p>HTML & CSS</p>
+			</div>
+			<div class="marg-img">
+				<img src="./assets/images/github.png" alt="image" class="img-fluid">
+				<p>GitHub</p>
+			</div>
+	
+		   </div>
+	
+		   
+		</section>
 		<!-- card -->
 		<section class="content-card"  id="tecnologias">
 	   <div class="box2">
@@ -89,39 +125,37 @@
 			</div>
 			<div id="popup0" class="overlay">
 				<div class="popup">
+					<img src="./assets/images/react.png" class="img-in-card" alt="">
 					<h3>Here i am</h3>
 					<a class="close" href="#card">&times;</a>
 					<div class="contennt">
-						Thank to pop me out of that button, but now i'm done so you can close this window fucking pignic.
+						En resumen, React.js es una potente biblioteca de JavaScript que ayuda a los desarrolladores a construir aplicaciones web y móviles interactivas y de alto rendimiento. 
+						Está optimizado para el rendimiento, se puede usar tanto en el lado del servidor como en el lado del cliente y es compatible con varios marcos de desarrollo.
+						 Estas características hacen de React.js una herramienta muy útil para los desarrolladores.
 					</div>
 				</div>
 			</div>
 		</div>
-        
-
 
 		<div class="card" >
 			<div class="content">
 				<img src="./assets/images/js.png" class="img-card" alt="">
 				<h3>Java Script</h3>				
-				
-				<div class="box">
-					<a class="button" href="#popup1">Let me</a>
+				<a class="button" href="#popup1">Let me</a>
 				</div>
-				
 				<div id="popup1" class="overlay">
 					<div class="popup">
+						<img src="./assets/images/js.png" class="img-in-card" alt="">
 						<h3>Here i am</h3>
 						<a class="close" href="#card">&times;</a>
 						<div class="contennt">
 							Thank to pop me out of that button, but now i'm done so you can close this window fucking pig.
-						</div>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 	
-
 		<div class="card" >
 			<div class="content">
 				<img src="./assets/images/html5.png" class="img-card" alt="">
@@ -133,13 +167,19 @@
 					<h3>Here i am</h3>
 					<a class="close" href="#card">&times;</a>
 					<div class="contennt">
-						Thank to pop me out of that button, but now i'm done so you can close this window fucking pignic.
+						¡HTML es una herramienta imprescindible para todos los desarrolladores web! Esta tecnología ofrece muchos beneficios a la hora de crear contenido en la web.
+
+En primer lugar, HTML es de código abierto, lo que significa que cualquiera puede usarlo y acceder a su contenido de manera gratuita y sin necesidad de gastar grandes cantidades de dinero.
+
+Además, HTML es compatible con todos los navegadores web, lo que significa que tu contenido será visible en todos los dispositivos, independientemente de cual sea el sistema operativo que esté utilizando tu usuario. Esto es importante para asegurar que todos tus usuarios puedan acceder a tu contenido de manera rápida y sencilla.
+
+HTML también te permite crear contenido multimedia, como imágenes, videos y audio, lo que significa que podrás hacer tu sitio web mucho más atractivo y atrayente para los usuarios. Esto te ayudará a mejorar la experiencia de los usuarios cuando visiten tu sitio web.
+
+En resumen, HTML ofrece una gran cantidad de beneficios a todos los desarrolladores web. Si quieres crear un sitio web rápido, eficiente y atractivo
 					</div>
 				</div>
 			</div>
 		</div>
-
-
 
 		<div class="card">
 			<div class="content">
@@ -153,28 +193,41 @@
 					<h3>Here i am</h3>
 					<a class="close" href="#card">&times;</a>
 					<div class="contennt">
-						Thank to pop me out of that button, but now i'm done so you can close this window fucking pignic.
+						El diseño responsivo con Bootstrap, Flexbox y CSS se ha convertido en uno de los estándares más importantes para la creación de sitios web, permitiendo a los desarrolladores crear contenido flexible que se adapta a cualquier dispositivo. Esto significa que el contenido se ajusta de forma dinámica a la pantalla de un teléfono móvil, computadora de escritorio, tableta o computadora portátil. 
+						Flexbox y Bootstrap trabajan juntos para dar al desarrollador una herramienta poderosa para crear sitios web modernos y fáciles de usar.
+					</div>
+				</div>
+			</div>
+		</div>	
+
+		<div class="card" >
+			<div class="content">
+				<img src="./assets/images/adwords.png" class="img-card" alt="">
+				<h3>google ads</h3>
+				<a href="#popup9">Ver Detalles</a>
+			</div>
+			<div id="popup9" class="overlay">
+				<div class="popup">
+					<h3>Here i am</h3>
+					<a class="close" href="#card">&times;</a>
+					<div class="contennt">
+						¿Está buscando una forma eficaz de llevar tráfico a su sitio web? ¡Google Ads le ofrece la solución perfecta! Esta herramienta de publicidad ofrece una amplia variedad de beneficios que aumentarán la visibilidad de tu sitio web y ayudarán a atraer más clientes.
+
+Con Google Ads, podrás llegar a tu público objetivo con más eficacia, lo que aumentará el tráfico dirigido hacia tu sitio web. Esta herramienta proporciona informes precisos sobre el rendimiento de tu campaña, lo que te permitirá optimizar tu publicidad para obtener los mejores resultados.
+
+Además, la publicidad de Google Ads puede ayudar a destacar tu marca. Mediante el uso de anuncios dirigidos, puedes asegurarte de que tu contenido llegue a las personas que están interesadas en lo que tienes que ofrecer. Esto mejora la imagen de tu marca y aumenta el reconocimiento de tu empresa.
+
+¡Google Ads ofrece una forma sencilla de promover tu marca y aumentar el tráfico en tu sitio web! ¡Aprovecha esta increíble herramienta y disfruta de todos los beneficios que ofrece!
 					</div>
 				</div>
 			</div>
 		</div>
-
 		
-
-		<div class="card" >
-			<div class="content">
-				<img src="./assets/images/html5.png" class="img-card" alt="">
-				<h3>Html</h3>
-				<a href="#">Ver Detalles</a>
-			</div>
-		</div>
-
-
 
 		<div class="card">
 			<div class="content">
-				<img src="./assets/images/css3.png" class="img-card" alt="">
-				<h3>Css</h3>
+				<img src="./assets/images/figma.png" class="img-card" alt="">
+				<h3>figma</h3>
 				<a href="#">Ver Detalles</a>
 			</div>
 		</div>
@@ -192,7 +245,20 @@
 					<h3>Here i am</h3>
 					<a class="close" href="#card">&times;</a>
 					<div class="contennt">
-						Thank to pop me out of that button, but now i'm done so you can close this window fucking pig jfvfvktfktufkgflg.
+						Hoy quiero hablarles sobre las ventajas que puede tener un desarrollador al utilizar herramientas de inteligencia artificial (IA) en su trabajo.
+
+En primer lugar, la IA puede ayudar a los desarrolladores a ahorrar tiempo y esfuerzo al automatizar tareas repetitivas y tediosas, como la depuración de código o la generación de código a partir de especificaciones. Esto les permite centrarse en problemas más importantes y complejos, lo que a su vez aumenta su productividad y eficiencia.
+
+En segundo lugar, la IA también puede ayudar a los desarrolladores a mejorar la calidad de su trabajo. Por ejemplo, las herramientas de IA pueden ayudar a detectar errores y vulnerabilidades en el código de manera más rápida y precisa que un humano, lo que reduce el riesgo de fallos en las aplicaciones.
+
+Por último, pero no menos importante, el uso de herramientas de IA puede ayudar a los desarrolladores a mantenerse al día con las últimas tendencias y tecnologías en el campo del desarrollo de software. Esto les permite ofrecer soluciones más innovadoras y avanzadas a sus clientes y mantenerse competitivos en un mercado cada vez más exigente.
+
+En resumen, el uso de herramientas de IA puede ser una gran ventaja para los desarrolladores, ya que les permite ahorrar tiempo, mejorar la calidad de su trabajo y mantenerse al día con las últimas tecnologías. ¡No te quedes atrás y empieza a utilizar herramientas de IA en tu trabajo hoy mismo!
+
+
+
+
+
 						
 					</div>
 					<div class="wrap-galery">
@@ -255,8 +321,6 @@
 			</div>
 		</div>
 
-
-
 		<div class="card">
 			<div class="content">
 				<img src="./assets/images/css3.png" class="img-card" alt="">
@@ -264,22 +328,44 @@
 				<a href="#">Ver Detalles</a>
 			</div>
 		</div>
+
 	</section>
 
-	<section class="about-my">
-		<div class="about-mycontent">
-			<div class="marg-img">
-			<img src="./assets/images/perfil (5).png" alt="image" class="img-fluid">
-			<p>by stable difussion</p>
+	<section class="contacto">
+	
+			
+	<div class="card-contact">
+			   
+		        <div >
+                <img src="./assets/images/pic06.jpg" class="img-contacto" alt="">
+			    </div>
+
+                 <div  class="target-contact">
+
+			    <div class="card-i">
+				<h2>asdasd</h2>
+				<p>asdasd</p>
+				<img src="" alt="">
+				</div>
+
+				<div class="card-i">
+					<img src="./assets/images/linkedin.png" class="img-in-card" alt="">
+					<h2>asdasd</h2>
+					<p>asdasd</p>
+					
+				</div>
+
+				
+				<div class="card-i">
+					<h2>asdasd</h2>
+					<p>asdasd</p>
+					<img src="" alt="">
+				</div>
 			</div>
-			<div class="content-about">
-				<h2>oruru</h2>
-			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, optio.
-				 Omnis fuga quidem aut maxime nam enim possimus, minus nihil facilis, 
-				 soluta cupiditate eos accusantium ipsam dignissimos est et repudiandae?</p>
-		</div>
 	</div>
 	</section>
+
+
 
 	
 			

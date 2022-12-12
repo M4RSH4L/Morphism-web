@@ -63,7 +63,7 @@ function init() {
 	// MATERIALS
 
 	materials = generateMaterials();
-	current_material = 'multiColors';
+	current_material = 'flat';
 
 	// MARCHING CUBES
 

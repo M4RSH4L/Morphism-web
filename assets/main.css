@@ -7,10 +7,7 @@ body {
 	line-height: 24px;
 	overscroll-behavior: none;
 }
-p{
-	font-family: 'Plus Jakarta Sans', sans-serif;
 
-}
 /*titulos y parrafos */
 .title{
 	display: flex;
@@ -76,24 +73,29 @@ gui debugin
 p{
 	font-size: 2em;
     color: #000000;
+	/* font-family: 'Plus Jakarta Sans', sans-serif;*/
 }
 
 
 h1{
 	font-size: 9rem;
     text-transform: uppercase;
-
     text-shadow: 0 0 5px #770dfa, 0 0 10px #0000008c, 0 0 20px #000000db, 0 0 30px rgb(0 0 0 / 59%),
 	 0 0 40px #1d1d1da8, 0 0 55px #6900fe, 0px 0px 70px #00738000;
-
 }
 
-h2{-webkit-text-stroke-width: medium;
-    font-size: 4rem;
+h2{text-shadow: -3px -3px 4px #e2a4ff, 5px 5px 4px #110c13fa;
+    -webkit-text-stroke-width: medium;
+    font-size: 2rem;
     text-transform: uppercase;
-    color: #dbdc0e;
-    text-shadow: 0 0 5px #000000, 0 0 10px #d51313bd, 0 0 20px #000000db, 0 0 30px rgb(0 0 0 / 59%), 0 0 40px #1d1d1da8, 0 0 55px #00000000, 0px 0px 70px #222323;
+    color: #cbff00ab;
 }
+	
+
+
+
+
+   
 
 /* a {
 	color: rgb(255, 255, 255);
@@ -318,6 +320,11 @@ a, button, input, select {
 	justify-content: center;
 
 }
+.img-in-card{
+	height: 100px;
+	border-radius:50px;
+	box-shadow: 1px 1px 14px rgb(99 0 255);
+}
 
 /* responsive tarjetas blur */
 
@@ -366,6 +373,7 @@ a, button, input, select {
 	position: relative;
     width: 75%;
     height: 75%;
+	text-align: center;
     background: linear-gradient(163deg, rgb(0 0 0) -19.8%, rgb(24 1 41 / 90%) 80.92%);
     box-shadow: 8px 10px 20px rgb(17 246 224);
     border-radius: 5px;
@@ -435,12 +443,31 @@ a, button, input, select {
 		}
 	}
 
+	.about-mycontent-2{
+		background-color: #986dbd8f;
+		backdrop-filter: blur(10px);
+		box-shadow: 6px 6px 11px #50317f75, -6px -6px 11px rgb(171 137 226 / 62%);        
+		margin-bottom: 80px;
+		border-radius: 13px;
+	  }
+		@media screen and (max-width: 900px) {
+			.about-mycontent{
+				display:block;
+			}
+			.content-about {
+			
+				margin: 1px;
+			}
+		}
+
   .img-fluid {
 	border-radius: 50%;
 	width:50%;
-	box-shadow: 6px 6px 11px #50317f75, -6px -6px 11px rgb(171 137 226 / 62%);        
+	box-shadow: 6px 6px 11px #521f7cd1, -6px -6px 11px rgb(227 176 255);
+    
   }
   .marg-img {
+	margin:1%;
     text-align-last: center;
     width: 100%;
     align-self: center;
@@ -452,7 +479,7 @@ a, button, input, select {
 	text-align: center;
 	margin: 5%;
   }
-
+   
 
   .wrap-galery{
 	
@@ -479,5 +506,65 @@ a, button, input, select {
 .cont-imtex{
 	text-align-last: center;
 
+}
+
+.content-by{
+	display:flex;
+}
+.up-title{
+	display: flex;
+    justify-content: center;
+}
+
+.content-about > h2 , .carrd > h2 {
+	text-shadow: -3px -3px 4px #e2a4ff, 5px 5px 4px #110c13fa;
+    -webkit-text-stroke-width: medium;
+    font-size: 5rem;
+    text-transform: uppercase;
+	color: #cbff00ab;
+}
+
+.contacto{
 	
+	
+    padding: 0 5rem;
+	position: relative;
+	
+}
+.card-contact{
+	position: relative;
+	display: flex;
+     width: 98%; 
+     height:450px; 
+     box-shadow: 6px 6px 11px #521f7cd1, -6px -6px 11px rgb(227 176 255);
+	 margin: 2%;
+	 border-radius: 25px;
+}
+
+.img-contacto{
+height: 50%;
+border-radius: 50%;
+margin: 5%;
+}
+
+.target-contact{
+	width: 80%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.targett{
+	width: 20%;
+}
+.card-i {
+	text-align: center;
+	backdrop-filter: blur(10px);
+    position: relative;
+    margin: 20px;
+    width: 270px;
+    height: 400px;
+    border-radius: 20px;
+    background-size: cover;
+	box-shadow: 6px 6px 11px #50317f75, -6px -6px 11px rgb(171 137 226 / 62%);        
+    overflow: hidden;
 }

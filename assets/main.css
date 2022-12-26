@@ -59,7 +59,9 @@ body {
 p{
 	font-size: 2em;
     color: #000000;
+	margin:6%
 }
+
 
 .card-i ,a{
 	color: #eaff00;
@@ -75,13 +77,20 @@ h1{
 
 h2{text-shadow: -3px -3px 4px #e2a4ff, 5px 5px 4px #110c13fa;
     -webkit-text-stroke-width: medium;
-    font-size: 2rem;
+    font-size: 5rem;
     text-transform: uppercase;
     color: #cbff00ab;
 }
 	
 
-
+@media screen and (max-width: 700px){
+	p{
+	  font-size:1em ;
+	}
+	h2 , h1{
+	  font-size:2rem ;
+	}
+  }
 
 
    
@@ -331,12 +340,11 @@ h3{
 
 @media all and ( max-width: 640px ) {
 	.content-card { 
-		display: block;
+		display: flex;
+		justify-content: center;
 		
 	}
-	.content{
-		width:146px ;
-	}
+
 }
 
 	
@@ -439,7 +447,7 @@ h3{
 			display:block;
 		}
 		.content-about {
-		
+		    display: contents;
 			margin: 1px;
 		}
 	}
@@ -474,8 +482,7 @@ h3{
     align-self: center;
 }
   .content-about{
-	display: inline-grid;
-    width: 70%;
+	
 	line-height: initial;
 	text-align: center;
 	margin: 5%;
@@ -522,13 +529,7 @@ h3{
     justify-content: center;
 }
 
-.content-about > h2 , .carrd > h2 {
-	text-shadow: -3px -3px 4px #e2a4ff, 5px 5px 4px #110c13fa;
-    -webkit-text-stroke-width: medium;
-    font-size: 5rem;
-    text-transform: uppercase;
-	color: #cbff00ab;
-}
+
 
 .contacto{
     padding: 0 5rem;
@@ -540,8 +541,7 @@ h3{
 	display: flex;
      width: 98%; 
      /* height:450px;  */
-     box-shadow: 6px 6px 11px #521f7cd1, -6px -6px 11px rgb(227 176 255);
-	 margin: 2%;
+	 box-shadow: 6px 6px 11px #7662bad1, -6px -6px 11px rgb(167 138 205);	 margin: 2%;
 	 border-radius: 25px;
 }
 
@@ -550,12 +550,15 @@ h3{
 width: 45%;
 border-radius: 50%;
 margin: 5%;
+box-shadow: 6px 6px 11px #24083bd1, -6px -6px 11px rgb(227 176 255);
+    
 }
 
 .target-contact{
 	width: 100%;
     display: flex;
     justify-content: flex-end;
+	align-items: center;
 }
 
 .targett{
@@ -567,7 +570,7 @@ margin: 5%;
     position: relative;
     margin: 20px;
     width: 20%;
-    height: 45%;
+
     border-radius: 20px;
     background-size: cover;
 	box-shadow: 6px 6px 11px #50317f75, -6px -6px 11px rgb(171 137 226 / 62%);        
@@ -585,9 +588,10 @@ margin: 5%;
 	display: contents;
 }
 
-@media all and ( max-width: 700px ) {
+@media all and ( max-width: 851px ) {
 	.target-contact  { 
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 	.contacttt{
 		text-align: center;

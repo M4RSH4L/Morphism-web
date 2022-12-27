@@ -256,7 +256,6 @@ a, button, input, select {
     border-radius: 20px;
     background-size: cover;
 	box-shadow: 6px 6px 11px #50317f75, -6px -6px 11px rgb(171 137 226 / 62%);        
-    overflow: hidden;
 }
 
 .content {
@@ -525,8 +524,16 @@ h3{
 
 
 .contacto{
+    /* width: 90%; */
     padding: 0 5rem;
 	position: relative;
+}
+
+@media all and ( max-width: 851px ) {
+	.contacto  { 
+		width: 85%;
+		padding: 0 2rem;
+	}
 }
 
 .card-contact{
@@ -567,7 +574,6 @@ box-shadow: 6px 6px 11px #24083bd1, -6px -6px 11px rgb(227 176 255);
     border-radius: 20px;
     background-size: cover;
 	box-shadow: 6px 6px 11px #50317f75, -6px -6px 11px rgb(171 137 226 / 62%);        
-    overflow: hidden;
 }
 .card-i:hover {
     background: linear-gradient(354deg, #a300ffb0 -18.8%, rgb(0 255 115 / 52%) 104.92%);

@@ -8,10 +8,10 @@
 	<link type="text/css" rel="stylesheet" href="./assets/main.css">
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300&display=swap" rel="stylesheet">
 	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-	<script  type="module" src="./script/object.js"></script>
+	<script type="module" src="./script/object.js"></script>
 
 	<script type="importmap">
-        {
+		{
             "imports": {
                 "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
                 "OrbitControls": "https://unpkg.com/three@0.138.0/examples/jsm/controls/OrbitControls.js"
@@ -24,8 +24,7 @@
 
 
 <body>
-	<!-- <div class="container"></div> -->
-	<div id="header" class="alt">
+	<!-- <div id="header" class="alt">
 		<nav id="nav">
 			<ul>
 				<li class="lista-menu">
@@ -45,29 +44,36 @@
 				<i class="fas fa-bars"></i>
 			</span>
 		</nav>
-	</div>
+	</div> -->
 
 
 	<!-- init background 3d -->
-	<div class="title">
-		<div class="title-hijo">
-			<h1>bienvenido</h1>
-		</div>
-	</div>
-	<!-- <div id="showName"></div> -->
+
 	<div id="container"></div>
-	<!-- end background 3d -->
-
-	<!-- primeros 500 pixeles -->
-	<div class="space-white"></div>
-
 
 	<!-- banner -->
 
 	<section class="about-my" id="about">
+		<div class="home">
+			<div class="marg-img">
+				<img src="./assets/images/perfil.jpg" alt="image" class="img-one">
+				
+			</div>
+			<div class="content-about">
+				<h2>Bienvenido <br>a mi pagina<br>
+				</h2>
+				
+			</div>
+		</div>
+	</section>
+
+ 	<!-- info -->
+
+
+	<section class="about-my" id="about">
 		<div class="about-mycontent">
 			<div class="marg-img">
-				<img src="./assets/images/perfil.jpg" alt="image" class="img-fluid">
+				<img src="./assets/images/pic1.jpg" alt="image" class="img-one">
 				<p>by stable difussion</p>
 			</div>
 			<div class="content-about">
@@ -87,41 +93,9 @@
 		</div>
 	</section>
 
-	<section class="about-my">
+	
 
-		<div class="about-mycontent-2">
-			<div class="up-title">
-				<h2>esta pagina fue echa con </h2>
-			</div>
-			<div class="content-by">
-
-				<div class="marg-img">
-					<img src="./assets/images/threej.png" alt="image" class="img-fluid">
-					<p>Three.js</p>
-				</div>
-				<div class="marg-img">
-					<img src="./assets/images/jas.png" alt="image" class="img-fluid">
-					<p>JavaScript</p>
-				</div>
-				<div class="marg-img">
-					<img src="./assets/images/stability.png" alt="image" class="img-fluid">
-					<p>IA</p>
-				</div>
-				<div class="marg-img">
-					<img src="./assets/images/html.png" alt="image" class="img-fluid">
-					<p>HTML & CSS</p>
-				</div>
-				<div class="marg-img">
-					<img src="./assets/images/github.png" alt="image" class="img-fluid">
-					<p>GitHub</p>
-				</div>
-
-			</div>
-
-
-	</section>
-	<!-- card -->
-
+	<!-- wrap card -->
 
 	<section class="content-card" id="tecnologias">
 		<div class="box2">
@@ -190,9 +164,11 @@
 					<a class="close" href="#card">&times;</a>
 					<div class="contennt">
 						utilizar el ecosistema de JavaScript. Esto significa que estoy
-						familiarizado con las diferentes librerías y frameworks, como React, node, reac-router, three.js etc... que se
-						utilizan para construir aplicaciones web de manera más rápida, esteticas y eficiente. Además, también estoy
-						familiarizado con herramientas de desarrollo como Webpack  que me ayudan a automatizar
+						familiarizado con las diferentes librerías y frameworks, como React, node, reac-router, three.js
+						etc... que se
+						utilizan para construir aplicaciones web de manera más rápida, esteticas y eficiente. Además,
+						también estoy
+						familiarizado con herramientas de desarrollo como Webpack que me ayudan a automatizar
 						tareas y mejorar mi productividad.
 
 						En mi labor, utilizo mis conocimientos de JavaScript y el uso de librerías y frameworks para
@@ -248,7 +224,7 @@
 			</div>
 			<div id="popup4" class="overlay">
 				<div class="popup">
-					
+
 
 					<h3>Here i am</h3>
 					<a class="close" href="#card">&times;</a>
@@ -261,10 +237,15 @@
 						Flexbox y Bootstrap trabajan juntos para dar al desarrollador una herramienta poderosa para
 						crear sitios web modernos y fáciles de usar.
 					</div>
-					<div class="contenedor-img"><img src="./assets/images/logo.png" class="img-in-card" alt=""> <p>material ui</p>
-					<img src="./assets/images/bootstrap.png" class="img-in-card" alt=""><p>bootstrap</p>
-					<img src="./assets/images/css3.png" class="img-in-card" alt=""><p>css</p>
-					<img src="./assets/images/descarga.png" class="img-in-card" alt=""><p>styed component</p></div>
+					<div class="contenedor-img"><img src="./assets/images/logo.png" class="img-in-card" alt="">
+						<p>material ui</p>
+						<img src="./assets/images/bootstrap.png" class="img-in-card" alt="">
+						<p>bootstrap</p>
+						<img src="./assets/images/css3.png" class="img-in-card" alt="">
+						<p>css</p>
+						<img src="./assets/images/descarga.png" class="img-in-card" alt="">
+						<p>styed component</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -311,8 +292,8 @@
 			<div id="popupf" class="overlay">
 				<div class="popup">
 					<div class="wrap-galery">
-					<img src="./assets/images/figma.png" class="img-in-card" alt="">
-					<h3>Here i am</h3>
+						<img src="./assets/images/figma.png" class="img-in-card" alt="">
+						<h3>Here i am</h3>
 
 						<a class="close" href="#card">&times;</a>
 						<div class="contennt">Un desarrollador web que conoce Figma tiene la ventaja de poder colaborar
@@ -326,7 +307,7 @@
 						<div class="cont-immtex">
 							<img src="./assets/stable diffusion/figgma (2).jpg" alt="imagen" class="galeryy">
 						</div>
-			
+
 						<div class="cont-immtex">
 							<img src="./assets/stable diffusion/figma (2).png" alt="imagen" class="galeryy">
 						</div>
@@ -455,46 +436,77 @@
 
 
 	<section class="contacto">
-		
+
 		<div class="card-contact">
 			<div class="target-contact">
-				
-			<div class="contacttt">
-				<img src="./assets/images/pic3.jpg" class="img-contacto" alt="">
-				<h3>Ronan Lavorato<br />
-					Telefono:+549 2215606878<br />
-					Mail:ronan.lavorato@gmail.com<br />
-				</h3>
-			</div>
-			
-				<div class="card-i">
-					<a href="https://www.linkedin.com/in/ronan-lavorato/"><img src="./assets/images/linkedin.png" class="img-in-card-2" alt="">
-                       </a>
+
+				<div class="contacttt">
+					<img src="./assets/images/pic3.jpg" class="img-contacto" alt="">
+					<h3>Ronan Lavorato<br />
+						Telefono:+549 2215606878<br />
+						Mail:ronan.lavorato@gmail.com<br />
+					</h3>
 				</div>
 
 				<div class="card-i">
-					<a href="https:mailto:ronan.lavorato@gmail.com"><img src="./assets/images/gmail.png" class="img-in-card-2" alt="">
-				</a>
+					<a href="https://www.linkedin.com/in/ronan-lavorato/"><img src="./assets/images/linkedin.png"
+							class="img-in-card-2" alt="">
+					</a>
+				</div>
+
+				<div class="card-i">
+					<a href="https:mailto:ronan.lavorato@gmail.com"><img src="./assets/images/gmail.png"
+							class="img-in-card-2" alt="">
+					</a>
 				</div>
 
 
 				<div class="card-i">
-					<a href="https://wa.me/5492215606878"><img src="./assets/images/whatsapp.png" class="img-in-card-2" href="https://wa.me/5492215606878"
-						alt=""></a>
+					<a href="https://wa.me/5492215606878"><img src="./assets/images/whatsapp.png" class="img-in-card-2"
+							href="https://wa.me/5492215606878" alt=""></a>
 				</div>
 				<div class="card-i">
-					<a href="https://github.com/M4RSH4L"><img src="./assets/images/github.png" class="img-in-card-2" href="https://wa.me/5492215606878"
-						alt=""></a>
+					<a href="https://github.com/M4RSH4L"><img src="./assets/images/github.png" class="img-in-card-2"
+							href="https://wa.me/5492215606878" alt=""></a>
 				</div>
 
 			</div>
 		</div>
-	</div>
+		</div>
 	</section>
 
+			<!-- footer -->
+
+	<section class="footer">
+
+		<div class="about-mycontent-2">
+			<div class="up-title">
+				<p>by love and </p>
+			</div>
+			<div class="content-by">
+
+				<div class="marg-img">
+					<img src="./assets/images/threej.png" alt="image" class="img-fluid">
+					<p>Three.js</p>
+				</div>
+				<div class="marg-img">
+					<img src="./assets/images/jas.png" alt="image" class="img-fluid">
+					<p>JavaScript</p>
+				</div>
+				
+				<div class="marg-img">
+					<img src="./assets/images/html.png" alt="image" class="img-fluid">
+					<p>HTML & CSS</p>
+				</div>
+				<div class="marg-img">
+					<img src="./assets/images/github.png" alt="image" class="img-fluid">
+					<p>GitHub</p>
+				</div>
+
+			</div>
 
 
-
+	</section>
 
 </body>
 
